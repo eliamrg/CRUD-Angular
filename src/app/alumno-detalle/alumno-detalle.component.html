@@ -1,0 +1,37 @@
+<ion-content mode="ios">
+    <ion-header translucent="true">
+        <ion-toolbar>
+          <ion-title>Detalle del Alumno</ion-title>
+        </ion-toolbar>
+      </ion-header>
+    <ion-card>
+        <ion-card-content>
+            <p>Nombre: <strong>{{alumnoDetalle.nombre}}</strong></p>
+            <p>Apellido: <strong>{{alumnoDetalle.apellido}}</strong></p>
+            <p>Matricula: <strong>{{alumnoDetalle.matricula}}</strong></p>
+            <div>
+                <ion-button  routerLink="/inicio"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+                
+                <ion-button color="warning" (click)="verForm()"><ion-icon name="create-outline"></ion-icon></ion-button>
+                <ion-button color="danger" (click)="eliminarAlumno(id)" ><ion-icon name="trash-outline"></ion-icon></ion-button>
+                <ion-button color="tertiary" (click)="abrirActionSheet()"><ion-icon name="list-outline"></ion-icon></ion-button>
+            </div>
+        </ion-card-content>
+        
+    </ion-card>
+    <div *ngIf="IsHidden">
+        <ion-card>
+            <ion-card-content >
+                <p>
+                    EDITAR REGISTRO
+                </p>
+                <label for="fname" >Nombre:</label>
+                <ion-input placeholder="{{alumnoDetalle.nombre}}" [(ngModel)]="alumnoDetalle.nombre"></ion-input>
+                <label for="lname">Apellido:</label>
+                <ion-input placeholder="{{alumnoDetalle.apellido}}" [(ngModel)]="alumnoDetalle.apellido"></ion-input>
+                <ion-button (click)="guardar(id, alumnoDetalle)" color="warning">Guardar</ion-button>    
+            </ion-card-content>
+        </ion-card>
+    </div>
+    
+</ion-content>

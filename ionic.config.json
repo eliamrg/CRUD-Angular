@@ -1,0 +1,12 @@
+{
+  "defaultProject": "ionic-angular-1905762",
+  "projects": {
+    "ionic-angular-1905762": {
+      "name": "ionic-angular-1905762",
+      "integrations": {
+        "capacitor": {}
+      },
+      "type": "angular"
+    }
+  }
+}
